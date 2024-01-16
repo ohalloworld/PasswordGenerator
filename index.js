@@ -13,6 +13,7 @@ const passwordTwo = document.getElementById("passwordTwo");
 let password = [];
 let nextChar = "";
 let nextIndex;
+const generate = document.getElementById("generatebutton")
 
 function getRandomIndex(length) {
     //get random index number for next password character
@@ -50,14 +51,14 @@ function createPassword(array) {
     return password.join("");
 }
 
-function newPassword() {
-    //generate a random new password.
+
+generate.addEventListener("click", function() {
+    //generate random new passwords.
     let passwordBase = setPasswordType();
 
     passwordOne.value = createPassword(passwordBase);
     passwordTwo.value = createPassword(passwordBase);
-}
-
+})
 
 function copyOnClick(clicked_id) {
     let copyText;
