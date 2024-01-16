@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+        <script src="https://kit.fontawesome.com/8c30c0472b.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1 id="whitecolorheading">Generate a<span id="greencolorheading">random password</span></h1>
+        <h3>Never use an insecure password again!</h3>
+        <div class="slidecontainer">
+            <input type="range" min="6" max="32" value="12" class="slider" id="passwordRange" oninput="setPasswordLength(this.value)">
+            <p>Length: <span id="currentValue">12</span></p>
+        </div>
+        <div class="checkboxescontainer">
+            <div class="checkbox_"></div>
+            <input type="checkbox" id="symbols" class="checkboxes">
+            <label for="symbols">Symbols</label>
+            <input type="checkbox" id="numbers" class="checkboxes" checked>
+            <label for="numbers">Numbers</label>
+        </div>
+        <div class="generatedpasswords">
+            <div class="passwordbox">
+                <input type="text" id="passwordOne" readonly>
+                <button onclick="copyOnClick(this.id)" id="pwOne" class="copy"><i class="fa-sharp fa-solid fa-copy"></i></button>
+            </div>
+            <div class="passwordbox">
+                <input type="text" id="passwordTwo" readonly>
+                <button onclick="copyOnClick(this.id)" id="pwTwo" class="copy"><i class="fa-sharp fa-solid fa-copy"></i></button>
+            </div>
+        </div>
+        <div id="generatebuttonbox"><button onclick="newPassword()" id="generateButton">Generate Passwords</button></div>
+        <script src="index.js"></script>
+    </body>
+</html>
